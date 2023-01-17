@@ -1,0 +1,394 @@
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+:root {
+  --primary-color: #22b8cf;
+  /* --primary-color-light: #c5fbfa; */
+  --primary-color-light: #99e9f2;
+  --primary-color-dark: #0c8599;
+
+  /* --secondary-color: #ff6b6b;
+  --secondary-color-light: #ffc9c9;
+  --secondary-color-dark: #c92a2a; */
+
+  --secondary-color: #f06595;
+  --secondary-color-light: #ffdeeb;
+  --secondary-color-dark: #a61e4d;
+
+  --grey-color-light-1: #f7f7f7;
+  --grey-color-light-2: #eee;
+  --grey-color-dark: #777;
+  --grey-color-dark-2: #606060;
+  /* --grey-color-dark-3: #333; */
+  --grey-color-dark-3: #2a2a2a;
+
+  --white-color: #fff;
+  --black-color: #000;
+
+  --default-font-size: 1rem;
+
+  --border-radius-default: 1rem;
+}
+
+/* Typography
+--------------------------------------------- */
+body {
+  font-family: "Lato", sans-serif;
+  font-size: var(--default-font-size);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-grey-dark);
+  background-color: var(--black-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Courgette", sans-serif;
+  margin: 0.5rem 0;
+  font-size: 1.75rem;
+}
+
+p {
+  margin: 0 0 1.5em;
+  line-height: 2;
+  color: var(--grey-color-dark-3);
+}
+
+.heading-secondary {
+  text-align: center;
+  color: var(--grey-color-dark-3);
+}
+
+/* Breakpoint at 640px*/
+@media (min-width: 40em) {
+  .heading-secondary {
+    font-size: 2.2rem;
+  }
+}
+/* Elements
+--------------------------------------------- */
+/* Not quite sure what to write in elements section */
+
+/* Links
+--------------------------------------------- */
+a,
+a:visited {
+  color: var(--grey-color-dark-3);
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 1px dotted;
+}
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+.site-wrapper {
+  /* This is for very large screens */
+  max-width: 60rem;
+  margin: 0 auto;
+  background-color: var(--secondary-color-dark);
+}
+
+/* Header
+--------------------------------------------- */
+.profile-pic {
+  border-radius: 50%;
+  height: 6rem;
+  width: 6rem;
+}
+
+.site-header {
+  /* background: linear-gradient(
+    to right,
+    var(--secondary-color-dark) 25%,
+    var(--secondary-color-light)
+    ); */
+  background-color: var(--secondary-color-dark);
+  padding: 1rem 1rem 4rem 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 1rem; */
+}
+
+/* .nav-menu {
+  display: none;
+} */
+
+.nav-menu {
+  list-style: none;
+  font-size: 1rem;
+
+  display: flex;
+  gap: 1rem;
+}
+
+.curve-svg-header-1 {
+  /* display: block; */
+  margin-top: -0.5rem;
+}
+
+.curve-svg path {
+  fill: var(--secondary-color-dark);
+}
+/* Breakpoint at 500px */
+@media (min-width: 31.25em) {
+  .nav-menu {
+    font-size: 1.6rem;
+    gap: 3rem;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+}
+
+/* Breakpoint at 640px*/
+@media (min-width: 40em) {
+  .profile-pic {
+    height: 8rem;
+    width: 8rem;
+  }
+
+  .site-header {
+    padding-bottom: 1rem;
+  }
+}
+
+/* Breakpoint at 870px */
+@media (min-width: 54rem) {
+  .curve-svg-header-1 {
+    /* How to fix the SVG????? */
+  }
+
+  .site-header {
+    padding-top: 1.5rem;
+  }
+}
+
+/* Main
+--------------------------------------------- */
+
+/* ABOUT SECTION */
+
+.section-about .heading-secondary-about {
+  /* text-align: center; */
+  padding-top: 4.5rem;
+}
+
+.section-about {
+  background-image: linear-gradient(
+      rgba(153, 233, 242, 0.6),
+      rgba(12, 133, 153, 0.6) /* Why cant I use CSS variablkes in this? */
+        /* rgba(var(--primary-color-light), 0.6),
+      rgba(var(--primary-color-dark), 0.6) */
+    ),
+    url("../media/hero.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  margin-top: -5rem;
+  padding-bottom: 8rem;
+}
+
+/* Breakpoint at 640px*/
+@media (min-width: 40em) {
+  .section-about {
+    margin-top: -6rem;
+  }
+}
+
+.about-paragraph {
+  font-weight: 500;
+  padding: 2rem;
+  margin: 1.5rem 2rem 1.5rem 2rem;
+  border: 1px var(--grey-color-dark-2) solid;
+
+  /* How to apply a box-shadow? It doesnt work*/
+  box-shadow: 2rem 1rem 2rem rgba(var(--black-color), 0.5);
+  backdrop-filter: blur(1rem);
+  background-color: var(--primary-color-light);
+  opacity: 0.7;
+  border-radius: var(--border-radius-default);
+
+  max-width: 28rem;
+}
+
+.about-paragraph span {
+  display: block;
+  padding: 0.6rem 0 0.6rem 0;
+}
+/* Do we necessarily need a H1? */
+
+/* Breakpoint at 870px */
+@media (min-width: 54rem) {
+  .heading-secondary-about {
+    padding-bottom: 2rem;
+  }
+
+  .section-about {
+    padding-top: 3rem;
+  }
+}
+
+/* PROJECTS SECTION */
+
+.projects-wrapper {
+  margin: 1rem 2rem 1.5rem 2rem;
+  padding-bottom: 2rem;
+}
+
+.section-projects {
+  background-color: var(--secondary-color-dark);
+  padding-bottom: 4rem;
+}
+
+.curve-svg-projects {
+  margin-top: -9rem;
+}
+
+.heading-secondary-projects {
+  text-align: center;
+  color: var(--secondary-color-light);
+  margin-top: -2rem;
+  padding-bottom: 1rem;
+}
+
+.project-img {
+  background-image: linear-gradient(
+    to right bottom,
+    var(--secondary-color-light),
+    var(--secondary-color-dark)
+  );
+  /* How to add a linear grqdient to an image without adding it in the CSS with the URL.  */
+  opacity: 0.8;
+}
+
+.project-caption-main,
+.project-caption-sub {
+  text-align: center;
+  line-height: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+.project-caption-main {
+  font-family: "Lato", sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--secondary-color-light);
+}
+
+.project-caption-sub {
+  font-size: 1.5rem;
+}
+
+.project-caption {
+  border: 1px var(--grey-color-dark-2) solid;
+  padding-top: 1rem;
+  background-color: var(--secondary-color);
+  border-radius: 0 0 1rem 1rem;
+}
+
+.project-container {
+  margin-bottom: 3rem;
+  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  border-radius: var(--border-radius-default);
+}
+
+/* Breakpoint at 640px*/
+@media (min-width: 40em) {
+  .projects-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* width: 30%; */
+  }
+
+  .project-container {
+    width: 40%;
+    margin-bottom: 4rem;
+  }
+}
+
+@media (min-width: 54em) {
+  .heading-secondary-projects {
+    padding-bottom: 2rem;
+  }
+
+  .section-projects {
+    padding-bottom: 0;
+  }
+}
+
+/* CONTACT SECTION */
+
+.section-contact {
+  background-color: var(--primary-color-light);
+  margin-top: -4rem;
+  padding: 6rem 0 5rem 0;
+}
+
+/* Breakpoint at 620px = 38.75em */
+@media (min-width: 38.75em) {
+  .section-contact {
+    margin-top: -7rem;
+  }
+}
+
+.heading-secondary-contact {
+  /* text-align: center; */
+  padding-bottom: 2rem;
+}
+
+.social-media-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media (min-width: 54em) {
+  .social-media-container {
+    max-width: 50%;
+    margin: 0 auto;
+    /* justify-content: space-between; */
+  }
+}
+
+/* Footer
+--------------------------------------------- */
+
+.curve-svg-footer {
+  margin-top: -1.5rem;
+}
+
+footer {
+  background-color: var(--primary-color-dark);
+  padding: 1rem 0 0.5rem 0;
+}
+
+footer p {
+  text-align: center;
+  font-weight: 600;
+}
